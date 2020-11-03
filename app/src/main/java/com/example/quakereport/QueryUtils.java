@@ -27,8 +27,7 @@ public final class QueryUtils {
       private QueryUtils() {
     }
 
-    public static ArrayList<Earthquake> extractfeatres(JSONObject baseJsonResponse) {
-
+    public static ArrayList<Earthquake>  extractFeatureFromJson(JSONObject earthquakeJSON) {
         // Create an empty ArrayList that we can start adding earthquakes to
         ArrayList<Earthquake> earthquakes = new ArrayList<>();
 
@@ -38,8 +37,7 @@ public final class QueryUtils {
 
 
         try {
-
-           JSONArray array = baseJsonResponse.getJSONArray("features");
+           JSONArray array = earthquakeJSON.getJSONArray("features");
            for(int i=0;i<array.length();i++){
                JSONObject earthquake = array.getJSONObject(i);
                JSONObject properties=earthquake.getJSONObject("properties");
@@ -133,6 +131,7 @@ public final class QueryUtils {
         }
         return output.toString();
     }
+
 
 
 

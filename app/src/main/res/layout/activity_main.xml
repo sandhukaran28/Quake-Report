@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<ListView
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +13,30 @@
     android:id="@+id/list"
     android:dividerHeight="0dp"
     android:divider="@null"
-    >
+    />
+
+    <ProgressBar
+        android:id="@+id/pBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading Data..."
+        android:textSize="18sp"
+        android:layout_below="@id/pBar"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:fontFamily="sans-serif-medium"
+        android:id="@+id/loading"
+        android:visibility="gone"
+        />
 
 
-</ListView>
+</RelativeLayout>
